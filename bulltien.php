@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require '../header.php'; ?>
 <style>
     body {
@@ -83,7 +84,7 @@
         <h1>掲示板</h1>
         <div class="container1">
             <div class="noticeinfo">書き込む</div>
-            <div class="noticename">名前</div>
+            <!-- <div class="noticename">名前</div> -->
             <form action="bulltien.php" method="post">
                 <input type="hidden" name="command" value="insert">
                 <!-- 主キー自動振り番　 入力なし-->
