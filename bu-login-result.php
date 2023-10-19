@@ -14,6 +14,10 @@ session_start();
     a {
         font-size: 20px;
      }
+     .logout {
+        /* margin-left: 450px; */
+        font-size: 9px;
+    }
 </style>
 <?php
 //同名がログインしている場合があるのでいったんデータクリア
@@ -30,6 +34,9 @@ foreach ($sql as $row) {
 if (isset($_SESSION['user'])) {
     echo '<h2>Welcome、', $_SESSION['user']['name'], 'さん!</h2>';
     echo '<div class="url_buttien"><a href="http://localhost/~itsys/practice/bulltien-input.php" >掲示板へ</a></div>';
+    echo '<br>';
+    echo '<div class="logout"><a href="http://localhost/~itsys/practice/bu-logout.php" >ログアウト</a></div>';
+    
 
 } else {
     echo '<div>ログイン名またはパスワードが違います。</div>';

@@ -29,7 +29,7 @@ if (isset($_REQUEST['command'])) {
             $sql3->execute([$_REQUEST['number']]);
             break;
     }
-    //リダイレクトの処理 二重投稿対策 ※出力前に行うのがPoint
+    //リダイレクト
     header("Location:http://localhost/~itsys/practice/bulltien-input.php");
 }
 ?>

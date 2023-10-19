@@ -16,6 +16,7 @@
     input[type="submit"] {
         margin-left: 300px;
         background-color: #ffa07f;
+  
         
     }
 </style>
