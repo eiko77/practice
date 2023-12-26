@@ -158,7 +158,7 @@
                     // 実行_データベースにデータ入る
                     $sql1->execute([$_REQUEST['name'], $_REQUEST['message']]);
                     //★リダイレクトの処理 いいねの数字が更新時増えないように
-                    header("Location:http://localhost/~itsys/practice/comment2.php"); // 新しいページにリダイレクト
+                    header("Location:http://localhost/~itsys/practice/comment.php"); // 新しいページにリダイレクト
                     exit(); // リダイレクト後にスクリプトの実行を終了
                 }
                 break;
@@ -170,7 +170,7 @@
                     //参考：阪崎さんの記入場所 但し阪崎さんのプログラムは入出力別ファイル・
                 }
                 //★リダイレクトの処理① 二重投稿対策 ※出力前に行うのがPoint
-                header("Location:http://localhost/~itsys/practice/comment2.php");
+                header("Location:http://localhost/~itsys/practice/comment.php");
                 exit();
 
                 break;
@@ -179,7 +179,7 @@
                 $sql3  = $pdo->prepare('delete from comment where number=?');
                 $sql3->execute([$_REQUEST['number']]);
                 //★リダイレクトの処理
-                header("Location:http://localhost/~itsys/practice/comment2.php"); // 新しいページにリダイレクト
+                header("Location:http://localhost/~itsys/practice/comment.php"); // 新しいページにリダイレクト
                 exit(); // リダイレクト後にスクリプトの実行を終了
                 break;
         }
@@ -190,7 +190,7 @@
         <div class="container1">
             <div class="noticeinfo">コメントを書いてください</div>
             <div class="noticename">名前</div>
-            <form action="comment2.php" method="post">
+            <form action="comment.php" method="post">
                 <input type="hidden" name="command" value="insert">
                 <!-- 主キー自動振り番　 入力なし-->
                 <div>
@@ -246,7 +246,7 @@
 
             //削除ボタン
             echo '<div id="delete_btn">';
-            echo '<form class="num" action="comment2.php" method ="post">';
+            echo '<form class="num" action="comment.php" method ="post">';
             echo '<input type="hidden" name="command" value="delete">';
             echo '<input type="hidden" name="number" value="', $row['number'], '">';
             echo '<input type="submit" value="削除">';
@@ -258,7 +258,7 @@
             echo '</div>';
 
             //更新　いいねボタンを押すと数字が増える
-            echo '<form class="iine" action="comment2.php" method ="post">';
+            echo '<form class="iine" action="comment.php" method ="post">';
             echo '<input type="hidden" name="number" value="', $row['number'], '">';
             echo '<input type="hidden" name="command" value="update">';
             echo '<div class="container2">';
